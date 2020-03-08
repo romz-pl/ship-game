@@ -1,4 +1,4 @@
-SET(EXE_NAME ship)
+SET( EXE_NAME ship )
 
 add_executable( ${EXE_NAME}
     Actor.cpp
@@ -12,7 +12,7 @@ add_executable( ${EXE_NAME}
     SpriteComponent.cpp
 )
 
-target_link_libraries( ${EXE_NAME} 
+target_link_libraries( ${EXE_NAME}
     SDL2
     SDL2_image
 )
