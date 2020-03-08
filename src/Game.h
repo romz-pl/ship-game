@@ -1,16 +1,13 @@
-// ----------------------------------------------------------------
-// From Game Programming in C++ by Sanjay Madhav
-// Copyright (C) 2017 Sanjay Madhav. All rights reserved.
-// 
-// Released under the BSD License
-// See LICENSE in root directory for full details.
-// ----------------------------------------------------------------
-
 #pragma once
+
 #include "SDL2/SDL.h"
 #include <unordered_map>
 #include <string>
 #include <vector>
+
+class Actor;
+class SpriteComponent;
+class Ship;
 
 class Game
 {
@@ -20,11 +17,11 @@ public:
     void RunLoop();
     void Shutdown();
 
-    void AddActor(class Actor* actor);
-    void RemoveActor(class Actor* actor);
+    void AddActor(Actor* actor);
+    void RemoveActor(Actor* actor);
 
-    void AddSprite(class SpriteComponent* sprite);
-    void RemoveSprite(class SpriteComponent* sprite);
+    void AddSprite(SpriteComponent* sprite);
+    void RemoveSprite(SpriteComponent* sprite);
 
     SDL_Texture* GetTexture(const std::string& fileName);
 private:
@@ -38,12 +35,12 @@ private:
     std::unordered_map<std::string, SDL_Texture*> mTextures;
 
     // All the actors in the game
-    std::vector<class Actor*> mActors;
+    std::vector<Actor*> mActors;
     // Any pending actors
-    std::vector<class Actor*> mPendingActors;
+    std::vector<Actor*> mPendingActors;
 
     // All the sprite components drawn
-    std::vector<class SpriteComponent*> mSprites;
+    std::vector<SpriteComponent*> mSprites;
 
     SDL_Window* mWindow;
     SDL_Renderer* mRenderer;
@@ -53,5 +50,5 @@ private:
     bool mUpdatingActors;
 
     // Game-specific
-    class Ship* mShip; // Player's ship
+    Ship* mShip; // Player's ship
 };
