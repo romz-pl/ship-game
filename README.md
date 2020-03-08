@@ -1,4 +1,4 @@
-# The clasic pong game
+# Simple ship game
 
 1. The implematation is in C++ and it is based on the source code provided in the [Sanjay Madhav's book "Game Programming in C++"](https://www.amazon.com/Game-Programming-Creating-Games-Design/dp/0134597206), chapter 2. The original code is available in [repository](https://github.com/gameprogcpp/code).
 
