@@ -1,20 +1,16 @@
-// ----------------------------------------------------------------
-// From Game Programming in C++ by Sanjay Madhav
-// Copyright (C) 2017 Sanjay Madhav. All rights reserved.
-// 
-// Released under the BSD License
-// See LICENSE in root directory for full details.
-// ----------------------------------------------------------------
-
 #pragma once
+
 #include "SpriteComponent.h"
 #include <vector>
 #include "Math.h"
+
+class Actor;
+
 class BGSpriteComponent : public SpriteComponent
 {
 public:
     // Set draw order to default to lower (so it's in the background)
-    BGSpriteComponent(class Actor* owner, int drawOrder = 10);
+    BGSpriteComponent(Actor* owner, int drawOrder = 10);
     // Update/draw overriden from parent
     void Update(float deltaTime) override;
     void Draw(SDL_Renderer* renderer) override;

@@ -12,7 +12,7 @@
 #include <algorithm>
 
 Actor::Actor(Game* game)
-    :mState(EActive)
+    : mState(EActive)
     , mPosition(Vector2::Zero)
     , mScale(1.0f)
     , mRotation(0.0f)
