@@ -1,14 +1,11 @@
-// ----------------------------------------------------------------
-// From Game Programming in C++ by Sanjay Madhav
-// Copyright (C) 2017 Sanjay Madhav. All rights reserved.
-// 
-// Released under the BSD License
-// See LICENSE in root directory for full details.
-// ----------------------------------------------------------------
-
 #pragma once
+
 #include <vector>
 #include "Math.h"
+
+class Game;
+class Component;
+
 class Actor
 {
 public:
@@ -19,7 +16,7 @@ public:
         EDead
     };
 
-    Actor(class Game* game);
+    Actor(Game* game);
     virtual ~Actor();
 
     // Update function called from Game (not overridable)
@@ -40,12 +37,12 @@ public:
     State GetState() const { return mState; }
     void SetState(State state) { mState = state; }
 
-    class Game* GetGame() { return mGame; }
+    Game* GetGame() { return mGame; }
 
 
     // Add/remove components
-    void AddComponent(class Component* component);
-    void RemoveComponent(class Component* component);
+    void AddComponent(Component* component);
+    void RemoveComponent(Component* component);
 private:
     // Actor's state
     State mState;
@@ -55,6 +52,6 @@ private:
     float mScale;
     float mRotation;
 
-    std::vector<class Component*> mComponents;
-    class Game* mGame;
+    std::vector<Component*> mComponents;
+    Game* mGame;
 };
